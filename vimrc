@@ -12,13 +12,32 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
+
+" Core
+Plug 'tpope/vim-sensible'
+Plug 'sheerun/vim-polyglot'
+Plug 'scrooloose/syntastic'
+
+" Lint
+Plug 'scrooloose/syntastic'
+
+" Colors
 Plug 'junegunn/seoul256.vim'
+Plug 'tomasr/molokai'
+Plug 'chriskempson/vim-tomorrow-theme'
+
+" Others
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'tpope/vim-sensible'
 
 call plug#end()
 " The caveat is that you should *never* use PlugUpgrade
 delc PlugUpgrade
 
 color seoul256
+"color molokai
+"colorscheme Tomorrow-Night-Eighties
+
+" Basic
+set number
+let mapleader=','
