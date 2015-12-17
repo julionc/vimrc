@@ -1,5 +1,6 @@
 set nocompatible
 
+let s:darwin = has('mac')
 let vim_plug_readme=expand('~/.vim/plugged/vim-plug/README.md')
 if !filereadable(vim_plug_readme)
 echo "Installing Vim-plug"
@@ -16,9 +17,12 @@ Plug 'junegunn/vim-plug'
 " Core
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
-Plug 'scrooloose/syntastic'
+
+" Core-extras
+Plug 'cohama/lexima.vim'
 
 " Lint
+"Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'scrooloose/syntastic'
 
 " Colors
@@ -26,18 +30,43 @@ Plug 'junegunn/seoul256.vim'
 Plug 'tomasr/molokai'
 Plug 'chriskempson/vim-tomorrow-theme'
 
-" Others
+" others
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'junegunn/vim-xmark', { 'do': 'make' }
+
+if s:darwin
+	Plug 'junegunn/vim-xmark'
+endif
+Plug 'greyblake/vim-preview'
 
 call plug#end()
-" The caveat is that you should *never* use PlugUpgrade
+" the caveat is that you should *never* use plugupgrade
 delc PlugUpgrade
 
 color seoul256
 "color molokai
 "colorscheme Tomorrow-Night-Eighties
 
-" Basic
-set number
+" Mappings - Faster scrolling
+nmap J 5j
+nmap K 5k
+xmap J 5j
+xmap K 5k
+
 let mapleader=','
+
+" Basic settings
+set autoindent
+set number
+
+" Syntastic
+set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
