@@ -20,6 +20,7 @@ Plug 'sheerun/vim-polyglot'
 
 " Core-extras
 Plug 'cohama/lexima.vim'
+Plug 'sickill/vim-pasta'
 
 " Lint
 "Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
