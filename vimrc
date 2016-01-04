@@ -17,6 +17,7 @@ Plug 'junegunn/vim-plug'
 " Core
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
+Plug 'scrooloose/nerdtree'
 
 " Core-extras
 Plug 'cohama/lexima.vim'
