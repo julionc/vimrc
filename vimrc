@@ -57,6 +57,10 @@ nmap K 5k
 xmap J 5j
 xmap K 5k
 
+" Alias commands
+:command WQ wq
+:command Wq wq
+
 let mapleader=','
 
 " Basic settings
@@ -73,6 +77,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+""" Nerd Tree
+let g:NERDTreeWinPos = "left"
+let NERDTreeIgnore = ['\.pyc$']
+let g:NERDTreeWinSize=28
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark
+map <leader>nf :NERDTreeFind<cr>
 
 " Filetypes
 source ~/.vim/filetypes.vim
