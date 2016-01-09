@@ -1,4 +1,7 @@
 
+" Use tabs as spaces, default identation: 2 spaces
+set sw=2 ts=2 sts=2
+
 au BufNewFile,BufRead *.scss.liquid   set ft=scss
 au BufNewFile,BufRead *.css.liquid    set ft=css
 au BufNewFile,BufRead *.js.liquid     set ft=javascript
