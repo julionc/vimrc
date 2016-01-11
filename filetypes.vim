@@ -15,7 +15,7 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
 
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
 			\ formatoptions+=croq softtabstop=4 smartindent
