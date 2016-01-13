@@ -37,6 +37,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-xmark', { 'do': 'make' }
 Plug 'honza/vim-snippets'
+Plug 'airblade/vim-gitgutter'
 
 if s:darwin
 	Plug 'junegunn/vim-xmark'
