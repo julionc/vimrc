@@ -17,7 +17,7 @@ Plug 'junegunn/vim-plug'
 " Core
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " Core-extras
 Plug 'airblade/vim-gitgutter'
@@ -33,16 +33,16 @@ Plug 'junegunn/seoul256.vim'
 Plug 'sickill/vim-monokai'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
+" Ruby
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+
 " Others
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-xmark', { 'do': 'make' }
 Plug 'honza/vim-snippets'
-
-" Ruby
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'tpope/vim-endwise', { 'for': 'ruby' }
-
+Plug 'vim-airline/vim-airline'
 
 if s:darwin
 	Plug 'junegunn/vim-xmark'
@@ -59,6 +59,8 @@ let mapleader=','
 set autoindent
 set number
 set t_Co=256
+set mouse=a
+set ts=2 sts=2 sw=2 expandtab
 
 "color seoul256
 "colorscheme monokai
@@ -71,10 +73,10 @@ xmap J 5j
 xmap K 5k
 
 " Alias commands
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -94,6 +96,11 @@ let g:NERDTreeWinSize=28
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
+map <C-n> :NERDTreeToggle<CR>
+map <C-e> :NERDTreeToggle<CR>
+
+"" Vim-airline
+let g:airline_powerline_fonts = 1
 
 " Filetypes
 source ~/.vim/filetypes.vim
