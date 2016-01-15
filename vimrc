@@ -20,6 +20,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree'
 
 " Core-extras
+Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'sickill/vim-pasta'
 
@@ -29,15 +30,19 @@ Plug 'scrooloose/syntastic'
 
 " Colors
 Plug 'junegunn/seoul256.vim'
-Plug 'tomasr/molokai'
-Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'sickill/vim-monokai'
+Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
-" others
+" Others
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-xmark', { 'do': 'make' }
 Plug 'honza/vim-snippets'
-Plug 'airblade/vim-gitgutter'
+
+" Ruby
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+
 
 if s:darwin
 	Plug 'junegunn/vim-xmark'
@@ -48,9 +53,16 @@ call plug#end()
 " the caveat is that you should *never* use plugupgrade
 delc PlugUpgrade
 
-color seoul256
-"color molokai
-"colorscheme Tomorrow-Night-Eighties
+let mapleader=','
+
+" Basic settings
+set autoindent
+set number
+set t_Co=256
+
+"color seoul256
+"colorscheme monokai
+colorscheme Tomorrow-Night-Eighties
 
 " Mappings - Faster scrolling
 nmap J 5j
@@ -61,12 +73,8 @@ xmap K 5k
 " Alias commands
 :command WQ wq
 :command Wq wq
-
-let mapleader=','
-
-" Basic settings
-set autoindent
-set number
+:command W w
+:command Q q
 
 " Syntastic
 set statusline+=%#warningmsg#
