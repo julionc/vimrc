@@ -3,11 +3,11 @@ set nocompatible
 let s:darwin = has('mac')
 let vim_plug_readme=expand('~/.vim/plugged/vim-plug/README.md')
 if !filereadable(vim_plug_readme)
-echo "Installing Vim-plug"
-echo ""
-silent !mkdir -p ~/.vim/{autoload,plugged}
-silent !git clone --depth 1 https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug
-silent !ln -sf ~/.vim/plugged/vim-plug/plug.vim ~/.vim/autoload/plug.vim
+  echo "Installing Vim-plug"
+  echo ""
+  silent !mkdir -p ~/.vim/{autoload,plugged}
+  silent !git clone --depth 1 https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug
+  silent !ln -sf ~/.vim/plugged/vim-plug/plug.vim ~/.vim/autoload/plug.vim
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -23,9 +23,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'sickill/vim-pasta'
+Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'vim-airline/vim-airline'
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 " Lint
 "Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
@@ -35,6 +35,7 @@ Plug 'scrooloose/syntastic'
 Plug 'junegunn/seoul256.vim'
 Plug 'sickill/vim-monokai'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plug 'morhetz/gruvbox'
 
 " Ruby
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
@@ -61,10 +62,14 @@ set number
 set t_Co=256
 set mouse=a
 set ts=2 sts=2 sw=2 expandtab
+set laststatus=2
 
 "color seoul256
 "colorscheme monokai
 colorscheme Tomorrow-Night-Eighties
+"colorschem gruvbox
+
+set background=dark
 
 " Mappings - Faster scrolling
 nmap J 5j
@@ -96,14 +101,21 @@ let g:NERDTreeWinSize=28
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
-map <C-n> :NERDTreeToggle<CR>
 map <C-e> :NERDTreeToggle<CR>
 
-"" Vim-airline
-let g:airline_powerline_fonts = 1
+"" LightLine
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"x":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
+      \ }
 
 "" TagBar
 nmap <F8> :TagbarToggle<CR>
+map <C-t> :TagbarToggle<CR>
 
-" Filetypes
+"" Filetypes
 source ~/.vim/filetypes.vim
