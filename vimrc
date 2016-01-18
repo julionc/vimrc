@@ -23,6 +23,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'sickill/vim-pasta'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline'
+Plug 'majutsushi/tagbar'
 
 " Lint
 "Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
@@ -40,12 +43,9 @@ Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 " Others
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'junegunn/vim-xmark', { 'do': 'make' }
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'vim-airline/vim-airline'
 
 if s:darwin
-	Plug 'junegunn/vim-xmark'
+  Plug 'junegunn/vim-xmark', { 'do': 'make' }
 endif
 Plug 'greyblake/vim-preview'
 
@@ -101,6 +101,9 @@ map <C-e> :NERDTreeToggle<CR>
 
 "" Vim-airline
 let g:airline_powerline_fonts = 1
+
+"" TagBar
+nmap <F8> :TagbarToggle<CR>
 
 " Filetypes
 source ~/.vim/filetypes.vim
