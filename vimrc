@@ -18,18 +18,15 @@ Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'airblade/vim-gitgutter'
 
 " Core-extras
-Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'sickill/vim-pasta'
 Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-
-" Lint
-"Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 
 " Colors
 Plug 'junegunn/seoul256.vim'
@@ -39,7 +36,8 @@ Plug 'morhetz/gruvbox'
 
 " Ruby
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+"Plug 'tpope/vim-endwise', { 'for': 'ruby' } "Seems to be a conflict w/ Lexima
+"Plug 'rstacruz/vim-closer' "vim-endwise - Alternative
 
 " Others
 Plug 'junegunn/goyo.vim'
@@ -60,7 +58,7 @@ let mapleader=','
 set autoindent
 set number
 set t_Co=256
-set mouse=a
+"set mouse=a
 set ts=2 sts=2 sw=2 expandtab
 set laststatus=2
 
@@ -96,7 +94,7 @@ let g:syntastic_check_on_wq = 0
 
 """ Nerd Tree
 let g:NERDTreeWinPos = "left"
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 let g:NERDTreeWinSize=28
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark
@@ -116,6 +114,8 @@ let g:lightline = {
 "" TagBar
 nmap <F8> :TagbarToggle<CR>
 map <C-t> :TagbarToggle<CR>
+"" autofocus on tagbar open
+let g:tagbar_autofocus = 1
 
 "" Filetypes
 source ~/.vim/filetypes.vim
