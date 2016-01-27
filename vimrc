@@ -27,7 +27,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 "Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
-Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
+Plug 'scrooloose/syntastic'
 
 " Colors
 Plug 'junegunn/seoul256.vim'
