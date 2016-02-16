@@ -43,6 +43,7 @@ Plug 'tpope/vim-rails', { 'for': 'ruby' }
 " Others
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'tpope/vim-eunuch'
 
 if s:darwin
   Plug 'junegunn/vim-xmark', { 'do': 'make' }
@@ -81,6 +82,14 @@ command! WQ wq
 command! Wq wq
 command! W w
 command! Q q
+
+" Autocomplete: Ctrl + space
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+      \ "\<lt>C-n>" :
+      \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+      \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+      \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
 
 " Syntastic
 set statusline+=%#warningmsg#
