@@ -72,10 +72,8 @@ colorscheme Tomorrow-Night-Eighties
 set background=dark
 
 " Mappings - Faster scrolling
-nmap J 5j
-nmap K 5k
-xmap J 5j
-xmap K 5k
+nmap J 10j
+nmap K 10k
 
 " Alias commands
 command! WQ wq
