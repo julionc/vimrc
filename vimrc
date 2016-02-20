@@ -18,18 +18,23 @@ Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 
-" Core-extras
-Plug 'cohama/agit.vim'
+" Git
+Plug 'airblade/vim-gitgutter'
+Plug 'cohama/agit.vim', {'on': ['Agit', 'AgitFile']}
+
+" Testing
+Plug 'janko-m/vim-test'
+
+" Core extras
 Plug 'cohama/lexima.vim'
 Plug 'sickill/vim-pasta'
 Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-"Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'scrooloose/syntastic'
+Plug 'Shougo/neocomplete.vim'
 
 " Colors
 Plug 'junegunn/seoul256.vim'
@@ -40,17 +45,10 @@ Plug 'kabbamine/yowish.vim'
 " Ruby
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'ngmy/vim-rubocop'
-"Plug 'tpope/vim-endwise', { 'for': 'ruby' } "Seems to be a conflict w/ Lexima
-"Plug 'rstacruz/vim-closer' "vim-endwise - Alternative
 
 " Others - Review
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-
-if s:darwin
-  Plug 'junegunn/vim-xmark', { 'do': 'make' }
-endif
-Plug 'greyblake/vim-preview'
 
 call plug#end()
 " the caveat is that you should *never* use plugupgrade
@@ -74,7 +72,6 @@ set background=dark
 
 let g:yowish = {'term_italic': 0}
 colorscheme yowish
-
 
 " Mappings - Faster scrolling
 nmap J 10j
@@ -107,9 +104,8 @@ let g:syntastic_check_on_wq = 0
 
 """ Nerd Tree
 let g:NERDTreeWinPos = "left"
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+let g:NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 let g:NERDTreeWinSize=28
-let g:NERDTreeIgnore = ['\~$', '\.class$']
 " Single-clic for folder nodes and double for files.
 let g:NERDTreeMouseMode = 2
 let g:NERDTreeAutoDeleteBuffer = 1
@@ -142,6 +138,13 @@ nmap <F8> :TagbarToggle<CR>
 map <C-t> :TagbarToggle<CR>
 "" autofocus on tagbar open
 let g:tagbar_autofocus = 1
+
+"" vim-test
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 "" Filetypes
 source ~/.vim/filetypes.vim
