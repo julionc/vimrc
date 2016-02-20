@@ -19,8 +19,10 @@ Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Core-extras
+Plug 'cohama/agit.vim'
 Plug 'cohama/lexima.vim'
 Plug 'sickill/vim-pasta'
 Plug 'itchyny/lightline.vim'
@@ -33,7 +35,7 @@ Plug 'scrooloose/syntastic'
 Plug 'junegunn/seoul256.vim'
 Plug 'sickill/vim-monokai'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-"Plug 'kabbamine/yowish.vim'
+Plug 'kabbamine/yowish.vim'
 
 " Ruby
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
@@ -63,16 +65,15 @@ set t_Co=256
 "set mouse=a
 set ts=2 sts=2 sw=2 expandtab
 set laststatus=2
+set background=dark
 
 "color seoul256
 "colorscheme monokai
-colorscheme Tomorrow-Night-Eighties
+"colorscheme Tomorrow-Night-Eighties
 "colorscheme yowish
 
-set background=dark
-
-"let g:yowish = {'term_italic': 0}
-"color yowish
+let g:yowish = {'term_italic': 0}
+colorscheme yowish
 
 
 " Mappings - Faster scrolling
@@ -122,6 +123,9 @@ map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
 map <C-e> :NERDTreeToggle<CR>
+
+"" CtrlP
+map <C-p> :Ctrl<CR>
 
 "" LightLine
 let g:lightline = {
