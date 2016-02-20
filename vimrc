@@ -33,17 +33,17 @@ Plug 'scrooloose/syntastic'
 Plug 'junegunn/seoul256.vim'
 Plug 'sickill/vim-monokai'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Plug 'morhetz/gruvbox'
+"Plug 'kabbamine/yowish.vim'
 
 " Ruby
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'ngmy/vim-rubocop'
 "Plug 'tpope/vim-endwise', { 'for': 'ruby' } "Seems to be a conflict w/ Lexima
 "Plug 'rstacruz/vim-closer' "vim-endwise - Alternative
 
-" Others
+" Others - Review
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'tpope/vim-eunuch'
 
 if s:darwin
   Plug 'junegunn/vim-xmark', { 'do': 'make' }
@@ -67,9 +67,13 @@ set laststatus=2
 "color seoul256
 "colorscheme monokai
 colorscheme Tomorrow-Night-Eighties
-"colorschem gruvbox
+"colorscheme yowish
 
 set background=dark
+
+"let g:yowish = {'term_italic': 0}
+"color yowish
+
 
 " Mappings - Faster scrolling
 nmap J 10j
@@ -104,6 +108,16 @@ let g:syntastic_check_on_wq = 0
 let g:NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 let g:NERDTreeWinSize=28
+let g:NERDTreeIgnore = ['\~$', '\.class$']
+" Single-clic for folder nodes and double for files.
+let g:NERDTreeMouseMode = 2
+let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeCaseSensitiveSort = 1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeHijackNetrw = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeChDirMode = 2
+
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
