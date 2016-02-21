@@ -1,6 +1,5 @@
 set nocompatible
 
-let s:darwin = has('mac')
 let vim_plug_readme=expand('~/.vim/plugged/vim-plug/README.md')
 if !filereadable(vim_plug_readme)
   echo "Installing Vim-plug"
@@ -13,12 +12,19 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
-
-" Core
 Plug 'tpope/vim-sensible'
-Plug 'sheerun/vim-polyglot'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" Navigation
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" File Editing
+Plug 'cohama/lexima.vim'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-surround'
+Plug 'sickill/vim-pasta'
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -26,33 +32,39 @@ Plug 'cohama/agit.vim', {'on': ['Agit', 'AgitFile']}
 
 " Testing
 Plug 'janko-m/vim-test'
+Plug 'benmills/vimux'
 
-" Core extras
-Plug 'cohama/lexima.vim'
-Plug 'sickill/vim-pasta'
+" Look & Feel
 Plug 'itchyny/lightline.vim'
+
+" Misc
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplete.vim'
+Plug 'sheerun/vim-polyglot'
 
 " Colors
-Plug 'junegunn/seoul256.vim'
-Plug 'sickill/vim-monokai'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plug 'junegunn/seoul256.vim'
 Plug 'kabbamine/yowish.vim'
+Plug 'sickill/vim-monokai'
+
+" Writing
+"Plug 'junegunn/goyo.vim'
+"Plug 'junegunn/limelight.vim'
 
 " Ruby
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'ngmy/vim-rubocop'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
-" Others - Review
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 
 call plug#end()
 " the caveat is that you should *never* use plugupgrade
 delc PlugUpgrade
+
+filetype plugin on
 
 let mapleader=','
 
@@ -68,14 +80,17 @@ set background=dark
 "color seoul256
 "colorscheme monokai
 "colorscheme Tomorrow-Night-Eighties
-"colorscheme yowish
 
-let g:yowish = {'term_italic': 0}
 colorscheme yowish
+let g:yowish = {'term_italic': 0}
 
 " Mappings - Faster scrolling
 nmap J 10j
 nmap K 10k
+
+" Fast saving & exiting
+nmap <leader>w :w!<cr>
+nmap <leader>q :q!<cr>
 
 " Alias commands
 command! WQ wq
@@ -136,7 +151,6 @@ let g:lightline = {
 "" TagBar
 nmap <F8> :TagbarToggle<CR>
 map <C-t> :TagbarToggle<CR>
-"" autofocus on tagbar open
 let g:tagbar_autofocus = 1
 
 "" vim-test
@@ -145,6 +159,12 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+let test#strategy = "vimux"
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 "" Filetypes
 source ~/.vim/filetypes.vim
