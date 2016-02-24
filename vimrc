@@ -1,5 +1,7 @@
 set nocompatible
 
+let s:is_mac = has('mac') || system('uname') =~? '^darwin'
+
 let vim_plug_readme=expand('~/.vim/plugged/vim-plug/README.md')
 if !filereadable(vim_plug_readme)
   echo "Installing Vim-plug"
@@ -164,6 +166,10 @@ let test#strategy = "vimux"
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
+endif
+
+if s:is_mac
+  let g:syntastic_ruby_mri_exec = '/Users/julionc/.rbenv/shims/ruby'
 endif
 
 "" Filetypes
