@@ -1,6 +1,6 @@
 set nocompatible
 
-let s:is_mac = has('mac') || system('uname') =~? '^darwin'
+let s:darwin = has('mac')
 
 let vim_plug_readme=expand('~/.vim/plugged/vim-plug/README.md')
 if !filereadable(vim_plug_readme)
@@ -40,6 +40,7 @@ Plug 'benmills/vimux'
 Plug 'itchyny/lightline.vim'
 
 " Misc
+Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -168,7 +169,7 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-if s:is_mac
+if s:darwin
   let g:syntastic_ruby_mri_exec = '/Users/julionc/.rbenv/shims/ruby'
 endif
 
