@@ -50,13 +50,8 @@ Plug 'sheerun/vim-polyglot'
 
 " Colors
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Plug 'junegunn/seoul256.vim'
 Plug 'kabbamine/yowish.vim'
 Plug 'sickill/vim-monokai'
-
-" Writing
-"Plug 'junegunn/goyo.vim'
-"Plug 'junegunn/limelight.vim'
 
 " Ruby
 Plug 'ngmy/vim-rubocop'
@@ -80,10 +75,8 @@ set ts=2 sts=2 sw=2 expandtab
 set laststatus=2
 set background=dark
 
-"color seoul256
 "colorscheme monokai
 "colorscheme Tomorrow-Night-Eighties
-
 colorscheme yowish
 let g:yowish = {'term_italic': 0}
 
