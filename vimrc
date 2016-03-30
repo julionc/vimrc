@@ -40,6 +40,7 @@ Plug 'benmills/vimux'
 Plug 'itchyny/lightline.vim'
 
 " Misc
+Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-commentary'
