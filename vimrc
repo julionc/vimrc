@@ -59,8 +59,9 @@ Plug 'ngmy/vim-rubocop'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
 " Javascript w/ React support
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" THAT SHIT IS CONFLICT WITH JS FILES
 
 call plug#end()
 " the caveat is that you should *never* use plugupgrade
