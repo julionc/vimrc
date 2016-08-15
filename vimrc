@@ -53,15 +53,14 @@ Plug 'sheerun/vim-polyglot'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plug 'kabbamine/yowish.vim'
 Plug 'sickill/vim-monokai'
+Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'Addisonbean/Vim-Xcode-Theme'
+Plug 'junegunn/seoul256.vim'
 
 " Ruby
 Plug 'ngmy/vim-rubocop'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
-
-" Javascript w/ React support
-" Plug 'pangloss/vim-javascript'
-" Plug 'mxw/vim-jsx'
-" THAT SHIT IS CONFLICT WITH JS FILES
 
 call plug#end()
 " the caveat is that you should *never* use plugupgrade
@@ -78,12 +77,20 @@ set t_Co=256
 "set mouse=a
 set ts=2 sts=2 sw=2 expandtab
 set laststatus=2
-set background=dark
+"set background=dark
 
 "colorscheme monokai
-colorscheme Tomorrow-Night-Eighties
+"colorscheme Tomorrow-Night-Eighties
 "colorscheme yowish
 "let g:yowish = {'term_italic': 0}
+"colorscheme gruvbox
+
+"set background=light
+"set background=dark
+"colorscheme PaperColor
+
+set background=light
+colorscheme seoul256
 
 " Mappings - Faster scrolling
 nmap J 10j
