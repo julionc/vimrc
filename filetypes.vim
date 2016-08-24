@@ -18,7 +18,17 @@ autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-			\ formatoptions+=croq softtabstop=4 smartindent
-			\ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+"autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+"			\ formatoptions+=croq softtabstop=4 smartindent
+"			\ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/

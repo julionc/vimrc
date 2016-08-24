@@ -161,6 +161,9 @@ nmap <F8> :TagbarToggle<CR>
 map <C-t> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
+"" Python
+let python_highlight_all=1
+
 "" vim-test
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
