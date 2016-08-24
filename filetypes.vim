@@ -2,6 +2,8 @@
 " Use tabs as spaces, default identation: 2 spaces
 set sw=2 ts=2 sts=2
 
+highlight BadWhitespace ctermbg=red guibg=red
+
 au BufNewFile,BufRead *.scss.liquid   set ft=scss
 au BufNewFile,BufRead *.css.liquid    set ft=css
 au BufNewFile,BufRead *.js.liquid     set ft=javascript
@@ -22,13 +24,14 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 "			\ formatoptions+=croq softtabstop=4 smartindent
 "			\ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" Python, PEP-008
+au BufRead,BufNewFile *.py,*.pyw set expandtab
+au BufRead,BufNewFile *.py,*.pyw set textwidth=139
+au BufRead,BufNewFile *.py,*.pyw set tabstop=4
+au BufRead,BufNewFile *.py,*.pyw set softtabstop=4
+au BufRead,BufNewFile *.py,*.pyw set shiftwidth=4
+au BufRead,BufNewFile *.py,*.pyw set autoindent
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
+au         BufNewFile *.py,*.pyw set fileformat=unix
+au BufRead,BufNewFile *.py,*.pyw let b:comment_leader = '#'
