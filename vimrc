@@ -57,6 +57,7 @@ Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'Addisonbean/Vim-Xcode-Theme'
 Plug 'junegunn/seoul256.vim'
+Plug 'rakr/vim-one'
 
 " Ruby
 Plug 'ngmy/vim-rubocop'
@@ -89,8 +90,12 @@ set laststatus=2
 "set background=dark
 "colorscheme PaperColor
 
-set background=light
-colorscheme seoul256
+"set background=light
+"colorscheme seoul256
+
+"set background=light
+set background=dark
+colorscheme one
 
 " Mappings - Faster scrolling
 nmap J 10j
