@@ -90,12 +90,12 @@ set laststatus=2
 "set background=dark
 "colorscheme PaperColor
 
-"set background=light
-"colorscheme seoul256
+set background=light
+colorscheme seoul256
 
 "set background=light
-set background=dark
-colorscheme one
+"set background=dark
+"colorscheme one
 
 " Mappings - Faster scrolling
 nmap J 10j
