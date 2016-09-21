@@ -51,13 +51,8 @@ Plug 'sheerun/vim-polyglot'
 
 " Colors
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Plug 'kabbamine/yowish.vim'
 Plug 'sickill/vim-monokai'
-Plug 'morhetz/gruvbox'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'Addisonbean/Vim-Xcode-Theme'
 Plug 'junegunn/seoul256.vim'
-Plug 'rakr/vim-one'
 
 " Ruby
 Plug 'ngmy/vim-rubocop'
@@ -79,23 +74,11 @@ set t_Co=256
 set ts=2 sts=2 sw=2 expandtab
 set laststatus=2
 "set background=dark
+set background=light
 
 "colorscheme monokai
 "colorscheme Tomorrow-Night-Eighties
-"colorscheme yowish
-"let g:yowish = {'term_italic': 0}
-"colorscheme gruvbox
-
-"set background=light
-"set background=dark
-"colorscheme PaperColor
-
-set background=light
 colorscheme seoul256
-
-"set background=light
-"set background=dark
-"colorscheme one
 
 " Mappings - Faster scrolling
 nmap J 10j
