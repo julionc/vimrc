@@ -48,6 +48,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplete.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'sjl/vitality.vim'
 
 " Colors
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
