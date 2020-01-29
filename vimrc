@@ -23,7 +23,7 @@ Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " File Editing
-Plug 'cohama/lexima.vim'
+"Plug 'cohama/lexima.vim'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'sickill/vim-pasta'
@@ -172,3 +172,5 @@ endif
 
 "" Filetypes
 source ~/.vim/filetypes.vim
+
+set clipboard+=unnamed
