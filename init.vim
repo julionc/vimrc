@@ -1,6 +1,10 @@
-set nocompatible
+" Vim 8 defaults
+" For more info, see :help defaults.vim
+unlet! skip_defaults_vim
+silent! source $VIMRUNTIME/defaults.vim
 
 let s:darwin = has('mac')
+let mapleader=','
 
 let vim_plug_readme=expand('~/.vim/plugged/vim-plug/README.md')
 if !filereadable(vim_plug_readme)
@@ -65,13 +69,12 @@ delc PlugUpgrade
 
 filetype plugin on
 
-let mapleader=','
-
+"TODO: To be review with new defaults
 " Basic settings
 set autoindent
 set number
 set t_Co=256
-"set mouse=a
+set mouse=a
 set ts=2 sts=2 sw=2 expandtab
 set laststatus=2
 "set background=dark
