@@ -59,6 +59,7 @@ Plug 'sjl/vitality.vim'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plug 'sickill/vim-monokai'
 Plug 'junegunn/seoul256.vim'
+Plug 'joshdick/onedark.vim'
 
 " Ruby
 Plug 'ngmy/vim-rubocop'
@@ -81,7 +82,8 @@ set background=light
 
 "colorscheme monokai
 "colorscheme Tomorrow-Night-Eighties
-colorscheme seoul256
+"colorscheme seoul256
+colorscheme onedark
 
 " Mappings - Faster scrolling
 nmap J 10j
