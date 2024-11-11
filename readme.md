@@ -7,5 +7,5 @@ Clone this repo to `~/.vim`
 
 And run:
 ```shell
-cd ~/.vim && sh install.sh
+make install
 ```
