@@ -6,9 +6,8 @@ all: install plug
 
 install:
 	@echo "\033[1;34m==>\033[0m Creating symlinks"; \
-		[ ! -f $(VIMRC) ] && ln -sf ~/.vim/vimrc $(VIMRC) && echo "\033[32m[✔]\033[0m Successfully installed $(VIMRC) for Vim"; \
+		[ ! -f $(VIMRC) ] && ln -sf ~/.vim/init.vim $(VIMRC) && echo "\033[32m[✔]\033[0m Successfully installed $(VIMRC) for Vim"; \
 		[ ! -f $(NVIMRC) ] && ln -sf ~/.vim ~/.config/nvim && echo "\033[32m[✔]\033[0m Successfully installed $(NVIMRC) for NeoVim"
-		$(MAKE) plug
 
 uninstall:
 	@echo "\033[1;34m==>\033[0m Uninstall symlinks"; \
@@ -20,4 +19,4 @@ plug:
 		nvim +PlugInstall +qall
 		@echo "\033[32m[✔]\033[0m Successfully installed plugins for NeoVim"; \
 
-.PHONY: all install uninstall plug
+.PHONY: install uninstall plug
